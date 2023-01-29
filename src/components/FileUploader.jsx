@@ -6,8 +6,9 @@ const FileUploader = () => {
   const [file, setFile] = useState();
   const [data, setData] = useState("");
   const [xml, setXml] = useState();
-  const [factura, setFactura] = useState();
   const [tributaria, setTributaria] = useState();
+  const [factura, setFactura] = useState();
+  const [info, setInfo] = useState();  
   const [subtotal12, setSubtotal12] = useState();
   const [subtotal0, setSubtotal0] = useState();
   const [detalle,setDetalle]=useState();
@@ -63,6 +64,14 @@ const FileUploader = () => {
       setFactura(_factura);
       console.log(_factura, 'factura');
 
+      const _info= xml.children[3].children.map((item) => ({
+        name: item.name,
+        value: item.value,
+      }));
+      setInfo(_info);
+      console.log(_info, 'info');
+      
+
       const _subtotal12= xml.children[1].children[8].children[0].children.map((item) => ({
         name: item.name,
         value: item.value,
@@ -100,13 +109,12 @@ const FileUploader = () => {
           RAZÓN SOCIAL: {tributaria[2].value}
           </p>
           <p>
-            <b>RUC: </b>TRIBUTARIA: 3
+            RUC: {tributaria[3].value}
           </p>
           <p>
-            <b>CLAVE DE ACCESO: </b>
-            TRIBUTARIA: 4
+            CLAVE DE ACCESO: {tributaria[4].value}
           </p>
-          <p>TRIBUTARIA: 10</p>
+          <p>{tributaria[10].value}</p>
           <hr />
      
         </div>
@@ -114,25 +122,26 @@ const FileUploader = () => {
           <div>
             <p>INFORMACIÓN FACTURA</p>
             <p>
-              <b>FECHA: </b>FACTURA: 0
+              FECHA: {factura[0].value}
             </p>
             <p>
-              <b>OBLIGADO A LLEVAR CONTABILIDAD: </b>FACTURA: 2
+            OBLIGADO A LLEVAR CONTABILIDAD: {factura[2].value}
             </p>
             <p>
-              <b>CLIENTE: </b>FACTURA: 4
+              CLIENTE: {factura[4].value}
             </p>
             <p>
-              <b>CED/RUC: </b>FACTURA: 5
+              CED/RUC: {factura[5].value}
             </p>
             <p>
-              <b>TEL: </b>820333
+              <b>TEL: </b>{info[0].value}
             </p>
             <p>
-              <b>EMAIL: </b>catileon_07@hotmail.com
+              <b>EMAIL: </b>{info[1].value}
             </p>
             <hr />
           </div>
+
           <table >
             <tbody>
               <tr>
@@ -150,30 +159,33 @@ const FileUploader = () => {
             </tbody>
             </table>
             <hr />
+
             <table >
             <tbody>
               <tr>
                 <td>SUBTOTAL 12%:</td>
-                <td>VAL</td>
+                <td>{subtotal12[2].value}</td>
               </tr>
               <tr>
                 <td>SUBTOTAL 0%:</td>
-                <td>VAL</td>
+                <td>{subtotal0[2].value}</td>
               </tr>
               <tr>
                 <td>SUBTOTAL SIN IMPUESTOS:</td>
-                <td>FACTURA: 6: name: 'importeTotal'</td>
+                <td>{factura[6].value}</td>
               </tr>
               <tr>
                 <td>IVA 12%:</td>
-                <td>val</td>
+                <td>{subtotal12[3].value}</td>
               </tr>
               <tr>
                 <td>TOTAL</td>
-                <td>FACTURA: 10: name: 'importeTotal'</td>
+                <td>{factura[10].value}</td>
               </tr>
             </tbody>
           </table>
+
+          
         </>
       )}
     </>
