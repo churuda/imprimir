@@ -8,6 +8,8 @@ const FileUploader = () => {
   const [xml, setXml] = useState();
   const [factura, setFactura] = useState();
   const [tributaria, setTributaria] = useState();
+  const [subtotal12, setSubtotal12] = useState();
+  const [subtotal0, setSubtotal0] = useState();
   const [detalle,setDetalle]=useState();
   useEffect(() => {
     if (data !== "") {
@@ -59,6 +61,20 @@ const FileUploader = () => {
       }));
       setFactura(_factura);
       console.log(_factura, 'factura');
+
+      const _subtotal12= xml.children[1].children[8].children[0].children.map((item) => ({
+        name: item.name,
+        value: item.value,
+      }));
+      setSubtotal12(_subtotal12);
+      console.log(_subtotal12, 'subtotal12');
+      
+      const _subtotal0= xml.children[1].children[8].children[1].children.map((item) => ({
+        name: item.name,
+        value: item.value,
+      }));
+      setSubtotal0(_subtotal0);
+      console.log(_subtotal0, 'subtotal0');
     }
   //   const _detalle= xml.children[2].children.map((item) => ({
   //     name: item.name,
@@ -142,7 +158,11 @@ const FileUploader = () => {
             <table >
             <tbody>
               <tr>
-                <td>SUBTOTAL IVA:</td>
+                <td>SUBTOTAL 12%:</td>
+                <td>VAL</td>
+              </tr>
+              <tr>
+                <td>SUBTOTAL 0%:</td>
                 <td>VAL</td>
               </tr>
               <tr>
