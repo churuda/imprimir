@@ -52,6 +52,7 @@ const FileUploader = () => {
         name: item.name,
         value: item.value,
       }));
+    
       setTributaria(_tributaria);
       console.log(_tributaria, 'tributaria');
       
@@ -76,13 +77,7 @@ const FileUploader = () => {
       setSubtotal0(_subtotal0);
       console.log(_subtotal0, 'subtotal0');
     }
-  //   const _detalle= xml.children[2].children.map((item) => ({
-  //     name: item.name,
-  //     value: item.value,
-  //   }));
-  //   setDetalle(_detalle);
-  //   console.log(detalle, 'detalle');
-  // }
+
   };
 
   return (
@@ -100,22 +95,22 @@ const FileUploader = () => {
       {xml && (
         <>
           <div>
-            <p>INFORMACIÓN TRIBUTARIA</p>
-            <p>
-              <b>RAZÓN SOCIAL: </b> TRIBUTARIA: 2
-            </p>
-            <p>TRIBUTARIA: 9</p>
-            <p>
-              <b>RUC: </b>TRIBUTARIA: 3
-            </p>
-            <p>
-              <b>CLAVE DE ACCESO: </b>
-              TRIBUTARIA: 4
-            </p>
-            <p>TRIBUTARIA: 10</p>
-            <hr />
-       
-          </div>
+          <p>INFORMACIÓN TRIBUTARIA</p>
+          <p>
+          RAZÓN SOCIAL: {tributaria[2].value}
+          </p>
+          <p>
+            <b>RUC: </b>TRIBUTARIA: 3
+          </p>
+          <p>
+            <b>CLAVE DE ACCESO: </b>
+            TRIBUTARIA: 4
+          </p>
+          <p>TRIBUTARIA: 10</p>
+          <hr />
+     
+        </div>
+        
           <div>
             <p>INFORMACIÓN FACTURA</p>
             <p>
