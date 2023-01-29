@@ -52,27 +52,44 @@ const FileUploader = () => {
         </button>
       </div>
       {xml && (
-        <table style={{ fontSize: "8px", marginTop: "1px" }}>
-          <thead style={{ fontSize: "8px" }}>RIVERA CRESPO ROSA ELVIRA</thead>
+       <>
+       <div>
+        <p>INFORMACIÓN TRIBUTARIA</p>
+        <p><b>RAZÓN SOCIAL: </b>RIVERA CRESPO ROSA ELVIRA</p>
+        <p>Calle: MIGUEL ULLAURI Número: 5-17 Intersección: CALLE LARGA</p>
+        <p><b>RUC: </b>0105478200</p>
+        <p><b>CLAVE DE ACCESO: </b>2701202301030112892200120011000000000497904123811</p>
+        <p>CONTRIBUYENTE RÉGIMEN RIMPE</p>
+        <p>==========================</p>
+       </div>
+       <div>
+        <p>INFORMACIÓN FACTURA</p>
+        <p><b>FECHA: </b>27/01/2023</p>
+        <p><b>OBLIGADO A LLEVAR CONTABILIDAD: </b>NO</p>
+        <p><b>CLIENTE: </b>GUILLEN MORA JULIA ROSARIO</p>
+        <p><b>CED/RUC: </b>0100490556</p>
+        <p><b>TEL: </b>820333</p>
+        <p><b>EMAIL: </b>catileon_07@hotmail.com</p>
+        <p>==========================</p>
+       </div>
+       <table style={{ fontSize: "8px", marginTop: "1px" }}>
           <tbody>
-            <tr style={{ fontSize: "8px", marginTop: "1px" }}>
-              RUC:<span>0105478200</span>
-            </tr>
-            <tr style={{ fontSize: "8px", marginTop: "1px" }}>
-              CONTRIBUYENTE RÉGIMEN RIMPE
-            </tr>
-            <tr style={{ fontSize: "8px", marginTop: "1px" }}>
-              DIR:
-              <span>MIGUEL ULLAURI Número: 5-17 Intersección: CALLE LARGA</span>
-            </tr>
-            <tr></tr>
+            
             <tr>
-              <td>3</td>
-              <td colSpan={2}>Larry the Bird</td>
-              <td>@twitter</td>
+              <td>COD</td>
+              <td>CANT.</td>
+              <td>PVP</td>
+              <td>TOTAL</td>
+            </tr>
+            <tr>
+              <td>COD</td>
+              <td>CANT.</td>
+              <td>PVP</td>
+              <td>TOTAL</td>
             </tr>
           </tbody>
         </table>
+       </>
       )}
     </>
   );
