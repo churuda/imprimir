@@ -86,33 +86,33 @@ const FileUploader = () => {
           <div>
             <p>INFORMACIÓN TRIBUTARIA</p>
             <p>
-              <b>RAZÓN SOCIAL: </b>
+              <b>RAZÓN SOCIAL: </b> TRIBUTARIA: 2
             </p>
-            <p>Calle: MIGUEL ULLAURI Número: 5-17 Intersección: CALLE LARGA</p>
+            <p>TRIBUTARIA: 9</p>
             <p>
-              <b>RUC: </b>0105478200
+              <b>RUC: </b>TRIBUTARIA: 3
             </p>
             <p>
               <b>CLAVE DE ACCESO: </b>
-              2701202301030112892200120011000000000497904123811
+              TRIBUTARIA: 4
             </p>
-            <p>CONTRIBUYENTE RÉGIMEN RIMPE</p>
+            <p>TRIBUTARIA: 10</p>
             <hr />
        
           </div>
           <div>
             <p>INFORMACIÓN FACTURA</p>
             <p>
-              <b>FECHA: </b>27/01/2023
+              <b>FECHA: </b>FACTURA: 0
             </p>
             <p>
-              <b>OBLIGADO A LLEVAR CONTABILIDAD: </b>NO
+              <b>OBLIGADO A LLEVAR CONTABILIDAD: </b>FACTURA: 2
             </p>
             <p>
-              <b>CLIENTE: </b>GUILLEN MORA JULIA ROSARIO
+              <b>CLIENTE: </b>FACTURA: 4
             </p>
             <p>
-              <b>CED/RUC: </b>0100490556
+              <b>CED/RUC: </b>FACTURA: 5
             </p>
             <p>
               <b>TEL: </b>820333
@@ -120,9 +120,9 @@ const FileUploader = () => {
             <p>
               <b>EMAIL: </b>catileon_07@hotmail.com
             </p>
-            <p>==========================</p>
+            <hr />
           </div>
-          <table style={{ fontSize: "8px", marginTop: "1px" }}>
+          <table >
             <tbody>
               <tr>
                 <td>COD</td>
@@ -131,10 +131,31 @@ const FileUploader = () => {
                 <td>TOTAL</td>
               </tr>
               <tr>
-                <td>COD</td>
-                <td>CANT.</td>
-                <td>PVP</td>
+                <td>val</td>
+                <td>val</td>
+                <td>val</td>
+                <td>val</td>
+              </tr>
+            </tbody>
+            </table>
+            <hr />
+            <table >
+            <tbody>
+              <tr>
+                <td>SUBTOTAL IVA:</td>
+                <td>VAL</td>
+              </tr>
+              <tr>
+                <td>SUBTOTAL SIN IMPUESTOS:</td>
+                <td>FACTURA: 6: name: 'importeTotal'</td>
+              </tr>
+              <tr>
+                <td>IVA 12%:</td>
+                <td>val</td>
+              </tr>
+              <tr>
                 <td>TOTAL</td>
+                <td>FACTURA: 10: name: 'importeTotal'</td>
               </tr>
             </tbody>
           </table>
