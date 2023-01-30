@@ -4,25 +4,27 @@ import XMLParser from "react-xml-parser";
 
 const FileUploader = () => {
   const [file, setFile] = useState();
-  const [data, setData] = useState("");
-  const [xml, setXml] = useState();
+  const [xml, setXml] = useState({});
+  const [data, setData] = useState();
   const [tributaria, setTributaria] = useState();
   const [factura, setFactura] = useState();
-  const [info, setInfo] = useState();  
+  const [info, setInfo] = useState();
   const [subtotal12, setSubtotal12] = useState();
   const [subtotal0, setSubtotal0] = useState();
-  const [detalle,setDetalle]=useState();
+  const [detalle, setDetalle] = useState();
+
   useEffect(() => {
     if (data !== "") {
-      console.log(data);
-      let _data = `${data.data}`;
-      setXml(new XMLParser().parseFromString(_data));
-      console.log(xml);
+      getData();
     }
-  }, [data]);
+  }, [file,data]);
+
   useEffect(() => {
-    orderData();
-  }, [xml]);
+    if (data !== "" && data !== undefined) {
+      orderData();
+    }
+  }, [xml])
+  
 
   const handleFileChange = (e) => {
     if (e.target.files) {
@@ -47,48 +49,62 @@ const FileUploader = () => {
       .catch((err) => console.error(err));
   };
 
+  const getData = async () => {
+    if (data !== "" && data !== undefined) {
+      let _data = `${data.data}`;
+      const _xml = new XMLParser().parseFromString(_data);
+      console.log(_xml);
+      setXml(_xml);
+    }
+  };
+
   const orderData = () => {
-    if (xml !== "" && xml !== undefined) {
-      const _tributaria = xml.children[0].children.map((item) => ({
+    if (xml !== {}) {
+      console.log(xml);
+       const _tributaria = xml.children[0].children.map((item) => ({
         name: item.name,
         value: item.value,
       }));
-    
+
       setTributaria(_tributaria);
-      console.log(_tributaria, 'tributaria');
-      
-      const _factura= xml.children[1].children.map((item) => ({
+      console.log(_tributaria)
+
+      const _factura= xml?.children[1].children.map((item) => ({
         name: item.name,
         value: item.value,
       }));
       setFactura(_factura);
       console.log(_factura, 'factura');
 
-      const _info= xml.children[3].children.map((item) => ({
+      const _info= xml?.children[3].children.map((item) => ({
         name: item.name,
         value: item.value,
       }));
       setInfo(_info);
       console.log(_info, 'info');
-      
 
-      const _subtotal12= xml.children[1].children[8].children[0].children.map((item) => ({
+      const _subtotal12= xml?.children[1].children[8].children[0].children.map((item) => ({
         name: item.name,
         value: item.value,
       }));
       setSubtotal12(_subtotal12);
       console.log(_subtotal12, 'subtotal12');
-      
-      const _subtotal0= xml.children[1].children[8].children[1].children.map((item) => ({
+
+      const _subtotal0= xml?.children[1].children[8].children[1].children.map((item) => ({
         name: item.name,
         value: item.value,
       }));
       setSubtotal0(_subtotal0);
       console.log(_subtotal0, 'subtotal0');
+
+      const _detalles=xml?.children[2].children.map(e=>e.children.map(e2=>({
+        name:e2.name,
+        value:e2.value
+      })))
+      console.log(_detalles,'detalles')
+      setDetalle(_detalles);
     }
-
   };
-
   return (
     <>
       <div className="header">
@@ -101,24 +117,24 @@ const FileUploader = () => {
           Upload
         </button>
       </div>
-      {xml && (
+      {tributaria && (
         <>
           <div>
           <p>INFORMACIÓN TRIBUTARIA</p>
           <p>
-          RAZÓN SOCIAL: {tributaria[2].value}
+          RAZÓN SOCIAL: {tributaria[0].value ? tributaria[2]?.value : ""}
           </p>
           <p>
-            RUC: {tributaria[3].value}
+            RUC: {tributaria[3]?.value}
           </p>
           <p>
-            CLAVE DE ACCESO: {tributaria[4].value}
+            CLAVE DE ACCESO: {tributaria[4]?.value}
           </p>
-          <p>{tributaria[10].value}</p>
+          <p>{tributaria[10]?.value}</p>
           <hr />
      
         </div>
-        
+       
           <div>
             <p>INFORMACIÓN FACTURA</p>
             <p>
@@ -183,11 +199,11 @@ const FileUploader = () => {
                 <td>{factura[10].value}</td>
               </tr>
             </tbody>
-          </table>
+          </table> 
 
           
         </>
-      )}
+      )} 
     </>
   );
 };
