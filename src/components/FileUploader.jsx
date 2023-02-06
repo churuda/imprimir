@@ -12,7 +12,7 @@ const FileUploader = () => {
   const [subtotal12, setSubtotal12] = useState();
   const [subtotal0, setSubtotal0] = useState();
   const [detalle, setDetalle] = useState();
-  // const [hide,setHide]=useState(false);
+  const [hideDiv,setHideDiv]=useState(false);
   useEffect(() => {
     if (data !== "") {
       getData();
@@ -135,10 +135,14 @@ const FileUploader = () => {
     }
   };
   return (
-    <div style={{top:'0px'}}>
+    <div style={{top:'0px', marginLeft:'10px'}}>
       <div>
-        <input type="file" onChange={handleFileChange} />
+       
+        <div>
+           <input type="file" onChange={handleFileChange} />
         <div>{file && `${file.name} - ${file.type}`}</div>
+        </div>
+       
         <button style={{ marginTop: "20px" }} onClick={handleUploadClick}>
           Upload
         </button>
