@@ -80,7 +80,7 @@ button:focus-visible {
 }
 p {
   padding: 0px;
-  font-size: 10px;
+  font-size: 14px;
   margin-top: 0px;
   margin-bottom:0px;
   font-family: 'Courier New', Courier, monospace;
@@ -90,7 +90,7 @@ p {
 
 td{
   padding: 0px;
-  font-size: 10px;
+  font-size: 14px;
   margin-top: 0px;
   margin-bottom:0px;
   font-family: 'Courier New', Courier, monospace;

@@ -137,9 +137,9 @@ const FileUploader = () => {
   return (
     <>
     
-       <div className="header">
+       {/* <div className="header">
         <h1>Comercial Carlitos</h1>
-      </div>
+      </div> */}
       <div>
         <input type="file" onChange={handleFileChange} />
         <div>{file && `${file.name} - ${file.type}`}</div>
