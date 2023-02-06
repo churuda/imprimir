@@ -136,8 +136,7 @@ const FileUploader = () => {
   };
   return (
     <>
-     {
-      <>
+    
        <div className="header">
         <h1>Comercial Carlitos</h1>
       </div>
@@ -148,8 +147,7 @@ const FileUploader = () => {
           Upload
         </button>
       </div>
-      </>
-     }
+    
       {tributaria && (
         <>
           <div>
