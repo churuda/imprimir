@@ -78,3 +78,22 @@ button:focus-visible {
   font-size: 30px;
 
 }
+p {
+  padding: 0px;
+  font-size: smaller;
+  margin-top: 0px;
+  margin-bottom:0px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  line-height: normal;
+}
+
+td{
+  padding: 0px;
+  font-size: smaller;
+  margin-top: 0px;
+  margin-bottom:0px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  line-height: normal;
+}
