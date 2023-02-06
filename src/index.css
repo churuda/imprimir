@@ -96,4 +96,9 @@ td{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: left;
   line-height: normal;
+  padding-left: 10px;
+
+}
+tr{
+  padding-left: 10px;
 }
