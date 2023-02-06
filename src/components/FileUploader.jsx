@@ -12,7 +12,7 @@ const FileUploader = () => {
   const [subtotal12, setSubtotal12] = useState();
   const [subtotal0, setSubtotal0] = useState();
   const [detalle, setDetalle] = useState();
-
+  const [hide,setHide]=useState(false);
   useEffect(() => {
     if (data !== "") {
       getData();
@@ -136,7 +136,9 @@ const FileUploader = () => {
   };
   return (
     <>
-      <div className="header">
+     {
+      <>
+       <div className="header">
         <h1>Comercial Carlitos</h1>
       </div>
       <div>
@@ -146,6 +148,8 @@ const FileUploader = () => {
           Upload
         </button>
       </div>
+      </>
+     }
       {tributaria && (
         <>
           <div>
@@ -224,6 +228,11 @@ const FileUploader = () => {
               </tr>
             </tbody>
           </table>
+          <button
+          onClick={setHide(true)}
+          >
+            imprimir
+          </button>
         </>
       )}
     </>
