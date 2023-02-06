@@ -144,7 +144,7 @@ const FileUploader = () => {
         </div>
        
         <button style={{ marginTop: "20px" }} onClick={handleUploadClick}>
-          Upload
+          Subir
         </button>
       </div>
     
