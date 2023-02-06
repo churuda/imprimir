@@ -80,17 +80,17 @@ button:focus-visible {
 }
 p {
   padding: 0px;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 0px;
   margin-bottom:0px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: left;
   line-height: normal;
 }
 
 td{
   padding: 0px;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 0px;
   margin-bottom:0px;
   font-family: 'Courier New', Courier, monospace;
