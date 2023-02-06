@@ -12,7 +12,7 @@ const FileUploader = () => {
   const [subtotal12, setSubtotal12] = useState();
   const [subtotal0, setSubtotal0] = useState();
   const [detalle, setDetalle] = useState();
-  const [hide,setHide]=useState(false);
+  // const [hide,setHide]=useState(false);
   useEffect(() => {
     if (data !== "") {
       getData();
@@ -226,11 +226,11 @@ const FileUploader = () => {
               </tr>
             </tbody>
           </table>
-          <button
+          {/* <button
           onClick={setHide(true)}
           >
             imprimir
-          </button>
+          </button> */}
         </>
       )}
     </>
