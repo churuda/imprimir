@@ -186,7 +186,7 @@ const FileUploader = () => {
                 {detalle.map((item) => (
                   <tr>
                     <td>{item.descripcion.descripcion}</td>
-                    <td>{item.cantidad.cantidad}</td>
+                    <td >{item.cantidad.cantidad}</td>
                     <td>$ {item.precioUnitario.precioUnitario}</td>
                     <td>
                       $ {item.precioTotalSinImpuesto.precioTotalSinImpuesto}
